@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Forms - Life Style Project By Terry - Shwe Yi Soe Moe - Eain Mya Phyu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            border-top: 10px solid #673ab7;
+        }
+        h1 {
+            color: #202124;
+            font-size: 24px;
+            font-weight: normal;
+        }
+        .question {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #202124;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #185abc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Life Style Project by Terry, Eain Mya Phyu, Zae Kar Aung</h1>
+        <p class="form-footer">* Required</p>
+        <form id="surveyForm">
+            <div class="question">
+                <p>What is your name? *</p>
+                <input type="text" name="name" required>
+            </div>
+            
+            <div class="question">
+                <p>Is Valentine's Day important to you? *</p>
+                <input type="radio" name="important" value="yes"> Yes<br>
+                <input type="radio" name="important" value="no"> No<br>
+            </div>
+            
+            <div class="question">
+                <p>Love is best described as? *</p>
+                <input type="radio" name="love" value="happiness"> Happiness<br>
+                <input type="radio" name="love" value="commitment"> Commitment<br>
+                <input type="radio" name="love" value="sacrifice"> Sacrifice<br>
+            </div>
+            
+            <div class="question">
+                <p>Let’s be honest, do you like surprises? *</p>
+                <input type="radio" name="surprises" value="yes"> Yes<br>
+                <input type="radio" name="surprises" value="no"> No<br>
+            </div>
+            
+            <div class="question">
+                <p>Yearly traditions: Do you celebrate Valentine's every year? *</p>
+                <input type="radio" name="yearly" value="yes"> Yes<br>
+                <input type="radio" name="yearly" value="no"> No<br>
+            </div>
+            
+            <div class="question">
+                <p>On Valentine's Day, what do you prefer? *</p>
+                <input type="radio" name="preference" value="date"> Date night<br>
+                <input type="radio" name="preference" value="stay home"> Staying home<br>
+            </div>
+            
+            <div class="question">
+                <p>Under what circumstances would you reject a Valentine proposal? *</p>
+                <input type="radio" name="reject" value="not interested"> Not interested<br>
+                <input type="radio" name="reject" value="too soon"> Too soon<br>
+            </div>
+            
+            <div class="question">
+                <p>Best Valentine’s gift for you? *</p>
+                <input type="radio" name="gift" value="flowers"> Flowers<br>
+                <input type="radio" name="gift" value="chocolates"> Chocolates<br>
+            </div>
+            
+            <div class="question">
+                <p>Ever received a surprise gift on Valentine’s Day? *</p>
+                <input type="radio" name="surprise_gift" value="yes"> Yes<br>
+                <input type="radio" name="surprise_gift" value="no"> No<br>
+            </div>
+            
+            <div class="question">
+                <p>Music choice on Valentine's Day? *</p>
+                <input type="radio" name="music" value="romantic"> Romantic songs<br>
+                <input type="radio" name="music" value="chill"> Chill music<br>
+            </div>
+            
+            <div class="question">
+                <p>Year 2024, do you have Valentine’s plans? *</p>
+                <input type="radio" name="plans_2024" value="yes"> Yes<br>
+                <input type="radio" name="plans_2024" value="no"> No<br>
+            </div>
+            <div class="question">
+                <p>Visiting new places is something you enjoy? *</p>
+                <input type="radio" name="new_places" value="yes"> Yes<br>
+                <input type="radio" name="new_places" value="no"> No<br>
+            </div>
+            <div class="question">
+                <p>Are you satisfied with your current academic performance? *</p>
+                <input type="radio" name="academic_performance" value="yes"> Yes<br>
+                <input type="radio" name="academic_performance" value="no"> No<br>
+            </div>
+            <div class="question">
+                <p>Like working in a team environment? *</p>
+                <input type="radio" name="team_environment" value="yes"> Yes<br>
+                <input type="radio" name="team_environment" value="no"> No<br>
+            </div>
+
+            <div class="question">
+                <p>Eating healthy meals is important to me? *</p>
+                <input type="radio" name="healthy_meals" value="yes"> Yes<br>
+                <input type="radio" name="healthy_meals" value="no"> No<br>
+            </div>
+            <div class="question">
+                <p>Need coffee or tea to start your day? *</p>
+                <input type="radio" name="coffee_tea" value="yes"> Yes<br>
+                <input type="radio" name="coffee_tea" value="no"> No<br>
+            </div>
+            <div class="question">
+                <p>Take notes while studying or attending lectures? *</p>
+                <input type="radio" name="take_notes" value="yes"> Yes<br>
+                <input type="radio" name="take_notes" value="no"> No<br>
+            </div>
+            <div class="question">
+                <p>Invest time in learning new skills? *</p>
+                <input type="radio" name="new_skills" value="yes"> Yes<br>
+                <input type="radio" name="new_skills" value="no"> No<br>
+            </div>
+            <div class="question">
+                <p>Need at least 8 hours of sleep to feel refreshed? *</p>
+                <input type="radio" name="sleep" value="yes"> Yes<br>
+                <input type="radio" name="sleep" value="no"> No<br>
+            </div>
+            <div class="question">
+                <p>Enjoy working on group projects? *</p>
+                <input type="radio" name="group_projects" value="yes"> Yes<br>
+                <input type="radio" name="group_projects" value="no"> No<br>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+        <p class="form-footer">Never submit passwords through Google Forms.</p>
+    </div>
+    <script>
+        document.getElementById("surveyForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Stop form submission
+
+    // Hide the form
+    let container = document.querySelector(".container");
+    container.innerHTML = "";
+
+    // Typing effect for message
+    let messageContainer = document.createElement("div");
+    messageContainer.style.fontSize = "24px";
+    messageContainer.style.fontWeight = "bold";
+    messageContainer.style.color = "#202124";
+    messageContainer.style.textAlign = "center";
+    messageContainer.style.marginBottom = "20px";
+    container.appendChild(messageContainer);
+
+    let text = "Do you really think this is a normal survey?";
+    let index = 0;
+
+    function typeEffect() {
+        if (index < text.length) {
+            messageContainer.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 100);
+        } else {
+            showOptions();
+        }
+    }
+    typeEffect();
+
+    function showOptions() {
+        let buttonContainer = document.createElement("div");
+        buttonContainer.style.textAlign = "center";
+
+        let yesButton = document.createElement("button");
+        yesButton.innerText = "Yes";
+        yesButton.style.margin = "10px";
+        yesButton.style.padding = "10px 20px";
+        yesButton.style.backgroundColor = "#4CAF50";
+        yesButton.style.color = "white";
+        yesButton.style.border = "none";
+        yesButton.style.cursor = "pointer";
+        yesButton.onclick = showQuestions;
+
+        let noButton = document.createElement("button");
+        noButton.innerText = "No";
+        noButton.style.margin = "10px";
+        noButton.style.padding = "10px 20px";
+        noButton.style.backgroundColor = "#f44336";
+        noButton.style.color = "white";
+        noButton.style.border = "none";
+        noButton.style.cursor = "pointer";
+        noButton.onclick = showQuestions; // Even if they say No, we still show questions
+
+        buttonContainer.appendChild(yesButton);
+        buttonContainer.appendChild(noButton);
+        container.appendChild(buttonContainer);
+    }
+
+    function showQuestions() {
+        container.innerHTML = `<h2 style="text-align:center;">Check the Questions Below</h2>`;
+
+        let questions = [
+            "What is your name?",
+            "Is Valentine's Day important to you?",
+            "Love is best described as?",
+            "Do you like surprises?",
+            "Do you celebrate Valentine's every year?",
+            "On Valentine's Day, what do you prefer?",
+            "Under what circumstances would you reject a Valentine proposal?",
+            "Best Valentine's gift for you?",
+            "Ever received a surprise gift on Valentine’s Day?",
+            "Music choice on Valentine's Day?",
+            "Do you have Valentine's plans in 2024?",
+            "Do you enjoy visiting new places?",
+            "Are you satisfied with your current academic performance?",
+            "Do you like working in a team environment?"
+        ];
+
+        let questionIndex = 0;
+        let questionContainer = document.createElement("div");
+        questionContainer.style.textAlign = "center";
+        questionContainer.style.fontSize = "20px";
+        questionContainer.style.marginTop = "20px";
+        container.appendChild(questionContainer);
+
+        function displayNextQuestion() {
+            if (questionIndex < questions.length) {
+                questionContainer.innerText = questions[questionIndex];
+                questionIndex++;
+                setTimeout(displayNextQuestion, 1500);
+            } else {
+                showSuspicionCheck();
+            }
+        }
+        displayNextQuestion();
+    }
+
+    function showSuspicionCheck() {
+        let suspicionContainer = document.createElement("div");
+        suspicionContainer.style.textAlign = "center";
+        suspicionContainer.style.marginTop = "20px";
+        suspicionContainer.innerHTML = "<h3>Do you see anything suspicious in these questions?</h3>";
+
+        let yesButton = document.createElement("button");
+        yesButton.innerText = "Yes";
+        yesButton.style.margin = "10px";
+        yesButton.style.padding = "10px 20px";
+        yesButton.style.backgroundColor = "#4CAF50";
+        yesButton.style.color = "white";
+        yesButton.style.border = "none";
+        yesButton.style.cursor = "pointer";
+        yesButton.onclick = function() {
+            window.location.href = "index2.html"; // Redirects to index2.html
+        };
+
+        let noButton = document.createElement("button");
+        noButton.innerText = "No";
+        noButton.style.margin = "10px";
+        noButton.style.padding = "10px 20px";
+        noButton.style.backgroundColor = "#f44336";
+        noButton.style.color = "white";
+        noButton.style.border = "none";
+        noButton.style.cursor = "pointer";
+        noButton.onclick = function() {
+            window.location.href = "index2.html"; // Redirects to index2.html
+        };
+
+        suspicionContainer.appendChild(yesButton);
+        suspicionContainer.appendChild(noButton);
+        container.appendChild(suspicionContainer);
+    }
+});
+
+    </script>
+    
+    
+    
+    
+</body>
+</html>

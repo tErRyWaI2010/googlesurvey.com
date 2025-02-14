@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confession Message</title>
+  <style>
+    /* Resetting body margin and setting basic styles */
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+      background-color: #f5e1e6; /* Soft pink background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    /* Main container styling */
+    .message-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      max-width: 600px;
+      min-height: 200px; /* Ensures the box has a minimum height */
+      height: auto; /* Automatically adjusts height based on content */
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border: 5px solid #D84A7B;
+      box-sizing: border-box;
+      overflow: hidden; /* Prevent overflow */
+      text-align: center;
+      word-wrap: break-word; /* Ensures the text breaks and stays inside */
+    }
+
+    /* Text styling inside the container */
+    #confession-message {
+      font-size: 28px;
+      color: #D84A7B;
+      line-height: 1.5;
+      word-wrap: break-word; /* Ensure text wraps inside the container */
+      white-space: normal;   /* Allow wrapping */
+      padding: 0 10px;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    /* Hover effect on the container */
+    .message-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Background sparkle effect */
+    @keyframes sparkle {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .sparkles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: sparkle 1.5s infinite ease-in-out;
+    }
+
+    .sparkle:nth-child(odd) {
+      animation-delay: 0.5s;
+    }
+
+    .sparkle:nth-child(even) {
+      animation-delay: 1s;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-container">
+    <p id="confession-message"></p>
+  </div>
+
+  <script>
+    const message = "I have a confession... I've been keeping this secret for too long uhh can I say I love to you?."; // Your confession message
+    const confessionMessage = document.getElementById("confession-message");
+
+    // Show the entire message instantly
+    confessionMessage.textContent = message;
+
+    // Run when the page loads
+    window.onload = function() {
+      createSparkles();
+    };
+
+    // Function to create sparkles in the background for a romantic effect
+    function createSparkles() {
+      const container = document.createElement("div");
+      container.classList.add("sparkles");
+
+      for (let i = 0; i < 50; i++) {
+        const sparkle = document.createElement("div");
+        sparkle.classList.add("sparkle");
+        sparkle.style.top = `${Math.random() * 100}%`;
+        sparkle.style.left = `${Math.random() * 100}%`;
+        sparkle.style.animationDuration = `${Math.random() * 1.5 + 1}s`;
+        container.appendChild(sparkle);
+      }
+
+      document.body.appendChild(container);
+    }
+  </script>
+</body>
+</html>

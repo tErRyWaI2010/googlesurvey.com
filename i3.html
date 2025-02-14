@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Confession</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .email-box {
+            position: relative;
+            width: 320px;
+            height: 220px;
+            background: #ff6666;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .email-box.open {
+            transform: scale(1.05);
+        }
+
+        .email-box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 160px solid transparent;
+            border-right: 160px solid transparent;
+            border-top: 110px solid #ff4d4d;
+        }
+
+        .email-box:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 110px;
+            background: #ff4d4d;
+        }
+
+        .message {
+            position: absolute;
+            bottom: -220px;
+            left: 0;
+            width: 100%;
+            height: 220px;
+            background: white;
+            transition: bottom 0.5s ease, height 0.5s ease;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .email-box.open .message {
+            bottom: 0;
+        }
+
+        .letter p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin: 0;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .options button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: #ff6666;
+            color: white;
+            transition: background 0.3s ease;
+        }
+
+        .options button:hover {
+            background: #ff4d4d;
+        }
+
+        .typing-text {
+            font-size: 16px;
+            color: #ff6666;
+            margin-top: 10px;
+        }
+
+        .confession {
+            font-size: 18px;
+            color: #ff6666;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .flower {
+            position: absolute;
+            top: -50px;
+            font-size: 24px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-box" id="emailBox">
+        <div class="message" id="message">
+            <div class="letter">
+                <p>Will you be my Valentine?</p>
+                <div class="options" id="options">
+                    <button id="yesButton">Yes</button>
+                    <button id="noButton">No</button>
+                </div>
+                <div class="typing-text" id="typingText"></div>
+                <div class="confession" id="confession"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const emailBox = document.getElementById('emailBox');
+            const messageBox = document.getElementById('message');
+            const options = document.getElementById('options');
+            const noButton = document.getElementById('noButton');
+            const yesButton = document.getElementById('yesButton');
+            const typingText = document.getElementById('typingText');
+            const confession = document.getElementById('confession');
+
+            // Open the envelope automatically after 0.5 seconds
+            setTimeout(() => {
+                emailBox.classList.add('open');
+                options.style.display = 'flex';
+            }, 500);
+
+            // No button moves away when hovered
+            noButton.addEventListener('mouseenter', () => {
+                const x = Math.random() * (window.innerWidth - noButton.offsetWidth);  // Random horizontal position
+                const y = Math.random() * (window.innerHeight - noButton.offsetHeight);  // Random vertical position
+                noButton.style.position = 'absolute';  // Make the button absolutely positioned
+                noButton.style.left = `${x}px`;  // Set random horizontal position
+                noButton.style.top = `${y}px`;  // Set random vertical position
+            });
+
+            // Yes button expands the message into a full-height letter
+            yesButton.addEventListener('click', () => {
+                options.style.display = 'none'; // Hide options
+                typingText.textContent = "Yay! She said yes! 💖"; // Show celebration message
+
+                // Expand the message box to full height
+                messageBox.style.height = '80vh';
+                messageBox.style.padding = '40px';
+
+                // Show romantic confession after a delay
+                setTimeout(() => {
+                    confession.innerHTML = `
+                        <p>Do you know why I love you?</p>
+                        <p>It's because you light up my world like no one else. Your smile, your laugh, your kindness—they make every day brighter. I love you for who you are, and I can't imagine my life without you. 💕</p>
+                        <p>Will you make me the happiest person and be mine forever?</p>
+                    `;
+                }, 1000);
+
+                // Start flower fall animation
+                setInterval(createFlower, 300);
+
+                // Redirect to i5.html after the romantic confession
+                setTimeout(() => {
+                    window.location.href = 'i5.html';
+                }, 5000); // Adjust the timing as needed
+            });
+
+            // Function to create falling flowers
+            function createFlower() {
+                const flower = document.createElement('div');
+                flower.classList.add('flower');
+                flower.innerHTML = '🌸';
+                flower.style.left = Math.random() * window.innerWidth + 'px';
+                flower.style.animationDuration = Math.random() * 3 + 2 + 's';
+                document.body.appendChild(flower);
+
+                // Remove flower after it falls
+                setTimeout(() => {
+                    flower.remove();
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
